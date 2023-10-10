@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- leaflet-geosearch  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css"/>
+
+    <!-- leaflet-control-geocoder -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+    <link rel="stylesheet" href="./css/style.css">
+    <title>PokeMap</title>
+</head>
+<body>
+    <div id="map">
+
+    </div>
+    
+
+
+    <!-- leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- leaflet-geosearch -->
+    <script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script>
+
+    <!-- leaflet-control-geocoder -->
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+
+    
+    <script>
+        let map = L.map('map').setView([0, 0], 7);
+
+        L.tileLayer('https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=BWrnKEV4bRlGdb0s3rfx', {
+            attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+        }).addTo(map);
+
+        // leaflet search
+        L.Control.geocoder().addTo(map); 
+
+        L.marker([51.5, -0.09]).addTo(map).bindPopup("I'm here.").openPopup();
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style02.css">
+    <title>Blue Bird - Benvenuto</title>
+</head>
+<body>
+    <!-- 1) inventare il nome -->
+    <!-- 2) 2 pagine in totale -->
+
+    <!-- PAGINA 1 -->
+
+    <!-- login con 2 campi (username e psw) -->
+    <!-- per accedere alla pagina succesiva i due campi devono essere compilati -->
+    <!-- username: max 15 caratteri - min 8 caratteri -->
+    <!-- password: max 20 caratteri - min 8 caratteri, almeno 1 maiusc. e 1 carattere speciale e 1 numero  -->
+    <!-- se i due campi sono ben compilati accedo alla pagina 2 -->
+
+
+
+    <!-- PAGINA 2 -->
+
+    <!-- un saluto di benvenuto utente -->
+    <!-- una textarea da non mandare a capo nell'html -->
+    <!-- sotto la textarea inserire un contatore con un punto iniziale di 280 caratteri. Ad ogni digitazione nella textarea il contatore diminuisce di 1 -->
+    <!-- quando il contatore arriva a zero l'utente non può più scrivere -->
+    <!-- studia keyboard event -->
+    <!-- sotto la textarea ci sarà un pulsante per inviare il mess -->
+    <!-- al click il mess verrà stampato sotto nella pagina con data e ora a cui è stato inviato -->
+    <!-- svuotare la textarea-->
+    <!-- all'inserimento di un nuovo messaggio comparira al di sotto del primo  -->
+
+
+    <!-- EXTRA 1 -->
+    <!-- crea array di 3 oggetti utente con le seguenti proprietà : -->
+    <!-- username, password -->
+    <!-- al click su login verificare che l'utente sia presente -->
+    <!-- metodo find() degli array -->
+
+
+    <!-- EXTRA 2 -->
+    <!-- creare un oggetto utente con le seguenti proprietà( 
+        username, password,
+        messaggi[{testo: string, data: new Date()}],
+        avatar: string ovvero il percorso dell'immagine utente
+        )  -->
+    <!-- quando stampo il messaggio con data e ora  -->
+    
+    <div class="container">
+
+        <h1>Benvenuto su Blue Bird</h1>
+
+        <h3>Tweet e contenuti</h3>
+
+        <label for="textarea"><strong>Manda un tweet:</strong></label>
+        <div>
+            <textarea name="textarea" id="textarea" placeholder="Scrivi un messaggio"></textarea>
+        </div>
+
+
+        <!-- in questo div viene stampato dinamicamente il numero attuale di caratteri della textarea ricavato dal contatore -->
+
+        <div id="contatore"></div>
+
+        <div id="feed"></div>
+
+
+        <button id="btn">Invia</button>
+
+
+        <!-- qui verranno stampati i messaggi inviati con data e ora: -->
+        <div id="stampa"></div>
+    </div>
+
+
+
+
+    <script src="./js/script02.js"></script>
+</body>
+</html>

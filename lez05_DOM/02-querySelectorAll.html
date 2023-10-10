@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>querySelectorAll</title>
+</head>
+<body>
+    <h2>query Selector All</h2>
+
+    <div id="demo"> Sono un div demo</div>
+
+    <h3>Lista Spesa:</h3>
+
+    <ul id="listaSpesa">
+        <li class="txtBlue" id="uno">pasta</li>
+        <li class="txtBlue" id="due">vino</li>
+        <li class="txtBlue" id="tre">fagioli</li>
+    </ul>
+    
+    
+    <h3>Libri:</h3>
+    
+    <ul id="listaLibri">
+        <li>libro1</li>
+        <li>libro2</li>
+        <li>libro3</li>
+        <li>libro4</li>
+    </ul>
+    
+    
+    
+    <script>
+
+        // DIFFERENZA TRA innerHTML e textContent
+    
+        // innerHTML legge e scrive CODICE HTML
+        // textContent legge e scrive solo il testo dei tag html
+
+
+
+        // QUERY SELECTOR ALL
+
+        // a differenza di querySelector, recupera più elementi contemporaneamente
+        // ritorna sempre una NODELIST, indipendentemente da quanti elementi recuperi
+        // può creare una nodelist anche di 1 solo elemento
+
+        // querySelectorAll("sintassi CSS");
+
+
+
+        // esempio
+        // recupera NON il primo <li> che trova , ma TUTTI GLI <li> del DOM
+
+        // let lista = document.querySelectorAll("li");
+
+
+
+        // NODELIST:
+
+        // insieme di NODI del dom (nodi di elemento, nodi di attributo, nodi di testo) 
+        // oggetto ITERABILE simile ad un ARRAY
+        // possiede indici, proprietà e metodi degli array 
+
+        // nodelist è spesso una RACCOLTA STATICA
+        // Esempio: se aggiungi un elemento <li> a un elenco nel DOM, l'elenco in NodeList non cambierà.
+
+
+
+
+
+        // recupera gli li di #listaSpesa
+        // crea una nodelist di nome listaSpesa
+        // ogni elemento della raccolta corrisponde ad un li
+
+        let listaSpesa = document.querySelectorAll("#listaSpesa li");
+
+
+        // leggo il primo elemento di listaSpesa
+        console.log(listaSpesa[0].innerHTML);
+
+
+        // modifico il terzo elemento di listaSpesa
+        listaSpesa[2].textContent = "ceci";
+
+
+        // leggo il terzo elemento di listaSpesa dopo la modifica
+        console.log(listaSpesa[2].textContent);
+
+
+        // posso ciclare la nodelist con un forEach
+
+        [...listaSpesa].forEach(li => {
+
+            console.log(li.textContent);
+        });
+
+
+
+
+
+        // nodelist di nome listaLibri
+
+        let listaLibri = document.querySelectorAll("#listaLibri li");
+
+
+        // ciclo la node lista listaLibri 
+        // rendo tutti i suoi elementi rossi tramite classe css
+
+        for(let i = 0; i < listaLibri.length; i++) {
+
+            listaLibri[i].setAttribute("class", "txtRed");
+        }
+
+
+
+    </script>
+</body>
+</html>

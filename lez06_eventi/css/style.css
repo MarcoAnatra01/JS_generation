@@ -1,0 +1,66 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.dimDiv{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.sfondo{
+    background-color: aquamarine;
+}
+
+
+
+/* 04-esercizio */
+/* Esercizio Scegli colore (cambia sfondo del body cliccando su un box)  */
+.box{
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    float: left;
+    padding: 1rem;
+    margin-right: 1rem;
+}
+
+.box:hover{
+    cursor: pointer;
+}
+
+
+
+div.input, div.select{
+    margin-bottom: 1.3rem;
+}
+
+select, input{
+    padding: 0.4rem;
+    font-size: 1rem;
+}
+select:hover{
+    cursor: pointer;
+}
+label{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#feed {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #bd2d2c;
+}
+
+#btn {
+    padding: 0.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+#btn:hover {
+    color: #fff;
+    background-color: #222;
+    cursor: pointer;
+}

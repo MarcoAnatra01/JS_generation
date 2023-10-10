@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>es0101</title>
+</head>
+<body>
+    <h2>moltiplicazione e divisione di 2 numeri</h2>
+
+    <div><input type="number" id="n1" placeholder="0"></div>
+    <div><input type="number" id="n2" placeholder="0"></div>
+
+    <button id="btnCalcola">Calcola</button>
+
+    <div id="risultato"></div>
+
+
+
+    <script>
+        let n1 = document.querySelector("#n1");
+        let n2 = document.querySelector("#n2");
+        let btnCalcola = document.querySelector("#btnCalcola");
+        let risultato = document.querySelector("#risultato");
+
+        function calcola(){
+            if (n1.value != "" && n2.value != "") {
+                risultato.innerHTML = "";
+                risultato.setAttribute("class", "txtGreen");
+
+                let prodotto = Number(n1.value) * Number(n2.value);
+                let divisione = Number(n1.value) / Number(n2.value);
+
+                risultato.innerHTML = `prodotto = ${prodotto} -- divisione = ${divisione}`;
+
+                n1.value = "";
+                n2.value = "";
+            }else{
+                risultato.setAttribute("class", "txtRed");
+                risultato.innerHTML = "Devi inserire 2 numeri !";
+            }
+        }
+
+        btnCalcola.addEventListener("click", calcola);
+    </script>
+</body>
+</html>

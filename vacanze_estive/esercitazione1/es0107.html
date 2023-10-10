@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es0107</title>
+</head>
+<body>
+    <label for="stringa"><strong>Inserisci una stringa:</strong></label>
+
+    <div>
+        <input type="text" name="stringa" id="stringa" placeholder="text">
+    </div>
+
+    <button id="btnTrasforma">Trasforma</button>
+
+    <div id="demo"></div>
+
+
+    <script>
+        let stringa = document.querySelector("#stringa");
+
+        let btnTrasforma = document.querySelector("#btnTrasforma");
+
+        let demo = document.querySelector("#demo");
+
+        function trasforma(){
+            let firstChar = stringa.value[0];
+
+            let newStringa = firstChar + stringa.value + firstChar;
+
+            demo.innerHTML += `<li> ${newStringa} </li>`;
+
+            stringa.value = "";
+        }
+
+        btnTrasforma.addEventListener("click", trasforma);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    background: linear-gradient(to right, #222, #203a43, #2c5364);
+    font-family: 'Poppins', sans-serif;
+}
+
+#formReg{
+    background-color: #fff;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    padding: 1rem;
+}
+
+#formReg h2{
+    text-align: center;
+}
+
+.txtRed{
+    color: #990033;
+}
+
+.txtGreen{
+    color: darkgreen;
+}

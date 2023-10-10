@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create/remove elements</title>
+</head>
+<body>
+    <h1>Lista Film:</h1>
+
+    <ul id="listaFilm">
+        <li>Mission Impossible</li>
+        <li>Barbie</li>
+        <li>Harry Potter</li>
+    </ul>
+
+
+    <script>
+        // inserire un nuovo film alla FINE dell'ul
+        
+        let listaFilm = document.querySelector("#listaFilm");
+
+        // creo un nuovo elemento li
+        let nuovoLi = document.createElement("li");
+
+        // creo un nuovo TextNode (è un oggetto)
+        let nuovoTitoloFilm = document.createTextNode("Dune");
+
+        // aggancio il nodo al nuovo li
+        nuovoLi.appendChild(nuovoTitoloFilm);
+
+        // aggancio il nuovo li alla ul 
+        listaFilm.appendChild(nuovoLi);
+
+
+
+
+        // inserire un nuovo film all'INIZIO dell'ul
+
+        let nuovoLi2 = document.createElement("li");
+
+        nuovoLi2.textContent = "Dumbo"; 
+
+        listaFilm.prepend(nuovoLi2);
+
+
+        //-------------------------------------------------
+        // appendChild(), inserisce l'elemento alla fine
+
+        // prepend(), inserisce l'elemento all'inizio
+        //-------------------------------------------------
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>esempio query selector</title>
+</head>
+<body>
+    <h3>Lista Spesa:</h3>
+
+    <ul id="listaSpesa">
+        <li class="txtBlue" id="uno">pasta</li>
+        <li class="txtBlue" id="due">vino</li>
+        <li class="txtBlue" id="tre">fagioli</li>
+    </ul>
+
+
+    <h3>Libri:</h3>
+
+    <ul id="listaLibri">
+        <li>libro1</li>
+        <li>libro2</li>
+        <li>libro3</li>
+        <li>libro4</li>
+    </ul>
+
+
+
+    <!-- senza toccare l'HTML, rendere gli li della lista libri rossi -->
+
+
+    <script>
+
+        // recupero la seconda lista ul (indice 1) tramite querySelectorAll
+
+        // viene creata una NODELIST DI UN SOLO ELEMENTO 
+        // l'unico elemento della nodelist sarà ul#listaLibri
+
+        let listaLibri = document.querySelectorAll("ul")[1];
+
+
+        // senza toccare l'HTML, setto alla ul#listaLibri una classe css
+        listaLibri.setAttribute("class", "txtRed");
+
+
+
+        // creo una COLLECTION con i figli (li) della nodelist listaLibri
+
+        // COLLECTION:
+
+        // insieme di elementi HTML
+        // NON è un array, ma è comunque un oggetto ITERABILE
+        // possiede dunque gli indici e la proprietà length
+        // NON possiede però i metodi array: pop(), push(), valueOf() ecc
+
+        // collection è una RACCOLTA ATTIVA
+        // Esempio: se aggiungi un elemento <li> a un elenco nel DOM, anche la collection cambierà
+
+        let libri = listaLibri.children;
+        
+        // querySelectorAll ritorna sempre una NODELIST
+        // children ritorna sempre una COLLECTION
+
+
+        
+
+        // sia con le nodelist che con le collection conviene usare:
+        // OPERATORE 3 DOT:
+        // trasforma la raccolta in un array e lo rende ciclabile
+
+
+        /* [...nomeNodelist/nomeCollection].forEach(elemento => {
+
+                codice
+        });*/
+
+
+
+    </script>
+</body>
+</html>

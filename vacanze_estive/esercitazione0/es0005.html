@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es0005</title>
+</head>
+<body>
+    <p id="numero1"></p>
+    <p id="numero2"></p>
+    <p id="numero3"></p>
+
+    <div id="addizione" style="width: 500px; height: 200px; background-color: red; margin-bottom: 30px;"></div>
+
+    <div id="moltiplicazione" style="width: 500px; height: 200px; background-color: yellow;"></div>
+
+    <script>
+        let n1 = 10;
+        let n2 = 18;
+        let n3 = 25;
+
+        let addizione = document.querySelector("#addizione");
+        let moltiplicazione = document.querySelector("#moltiplicazione");
+        
+        
+        let numero1 = document.querySelector("#numero1");
+        let numero2 = document.querySelector("#numero2");
+        let numero3 = document.querySelector("#numero3");
+        
+        numero1.innerHTML = `n1 = ${n1}`;
+        numero2.innerHTML = `n2 = ${n2}`;
+        numero3.innerHTML = `n3 = ${n3}`;
+        
+        
+        function somma(){
+            let s = n1 + n2 + n3;
+            return s;
+        }
+        
+        function moltiplica(){
+            let prodotto = Number(n1) * Number(n2) * Number(n3);
+            return prodotto;
+        }
+        
+        addizione.addEventListener("onmouseenter", somma);
+        moltiplicazione.addEventListener("onmouseenter", moltiplica);
+
+        addizione.innerHTML = `La somma tra i numeri è: ${somma()}`;
+        moltiplicazione.innerHTML = `Il prodotto tra i numeri è: ${moltiplica()}`;
+
+    </script>
+</body>
+</html>

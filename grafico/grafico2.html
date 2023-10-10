@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div style="width: 50%; height: 50%;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        var xValues = ["Maschi", "Femmine"];
+
+        // nell'array inserire i valori percentuali di maschi e femmine relativi alla provincia selezionata
+        // calcoli fatti con i dati del db
+        var yValues = [49, 51];
+
+        // var barColors = ["red", "red"];
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: xValues,
+                datasets: [{
+                    label: '% of Province',
+                    data: yValues,
+                    borderWidth: 1
+            }]
+            },
+            options: {
+            scales: {
+                y: {
+                beginAtZero: true
+                }
+            }
+            }
+        });
+
+    </script>
+</body>
+</html>

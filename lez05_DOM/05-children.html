@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>children, collection</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Lista libri</h1>
+
+        <ul id="listaLibri">
+            <li>Dune</li>
+            <li>Il cacciatore di aquiloni</li>
+            <li>Le mille e una notte</li>
+            <li>Il rosso e il nero</li>
+            <li>Il conte di Montecristo</li>
+        </ul>
+    </div>
+
+
+
+    <script>
+
+        // nodelist
+        let listaLibri = document.querySelectorAll("ul")[0];
+
+        // collection, non è un array
+        let libri = listaLibri.children;
+
+        [...libri].forEach(libro => {
+            
+            // scrivo nella console gli oggetti li 
+            console.log(libro);  
+
+            // scrivo nella console i testi degli li
+            console.log(libro.txtContent);  
+        });
+
+        let primoLibro = listaLibri.firstElementChild.txtContent;
+
+        let ultimoLibro = listaLibri.lastElementChild.txtContent;
+        console.log(ultimoLibro);
+
+
+
+
+        // RECUPERO ALTERNATIVO DEGLI li
+        
+
+        // primo modo alternativo:
+        
+        // let listaLibriAlternativa = document.querySelector("div.container").children[1].children;
+        
+        // prendi i figli del secondo figlio di div.container 
+        // prendi gli li di ul che si trova in div.container
+        
+
+
+
+        // secondo modo alternativo:
+
+        let listaLibriAlternativa = document.querySelectorAll("div.container li");
+
+        // prendi tutti gli li di div.container
+
+
+        [...listaLibriAlternativa].forEach(libro =>{
+
+            libro.setAttribute("class","txtRed");
+        })
+
+        console.log(listaLibriAlternativa);
+
+
+        // concatenare le nodelist:
+        // [array1...array2]
+
+    </script>
+</body>
+</html>

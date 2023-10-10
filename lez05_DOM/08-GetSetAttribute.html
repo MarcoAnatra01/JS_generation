@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Get Set Attribute</title>
+</head>
+<body>
+    <h1 id="titolo">Vendita piante e fiori</h1>
+
+    <div>
+        <img id="imgPianta" class="imgRes">
+    </div>
+
+    <h3 id="titoloFondo" class="titolo3">Titolo fondo</h3>
+
+    <script>
+        // esercizio: caricamento dinamico di una immagine
+
+        // 1) inserire una classe al titolo
+
+        let titolo = document.querySelector("#titolo");
+        
+        // non avendo una classe setto un attributo da zero
+
+        if (titolo.hasAttribute("class")) {
+
+            titolo.classList.add("txtGreen");
+        }else{
+            titolo.setAttribute("class", "txtGreen");
+        }
+
+
+        // 2) inserire l'immagine settando l'attributo src
+
+        let imgPianta = document.querySelector("#imgPianta");
+
+        /*
+        imgPianta.setAttribute("src", "./img/monstera.jpg");
+        imgPianta.setAttribute("alt", "pianta della famiglia Monstera");*/
+
+
+
+        // 3) dato un array di piante, cambiare l'immagine della pianta ogni 3 secondi
+        
+        let piante = ["banano", "monstera", "rosa"];
+
+        let i = 0;
+        setInterval(() =>{
+
+            i++;
+
+            if (i == piante.length) {
+                i = 0;
+            }
+
+            let path = "./img/" + piante[i] + ".jpg";
+
+            imgPianta.setAttribute("src", path);
+        },3000);
+
+
+        
+        // getAttribute
+
+        let classH3 = document.querySelector("#titoloFondo").getAttribute("class");
+
+        console.log(classH3);
+        
+        
+    </script>
+</body>
+</html>

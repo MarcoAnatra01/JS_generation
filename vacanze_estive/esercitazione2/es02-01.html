@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es02-01</title>
+</head>
+<body>
+    <!-- calcolo perimetro e area triangolo  -->
+
+    <h2>Calcolo Perimetro e Area Triangolo:</h2>
+
+    <div id="risultato"></div>
+
+
+
+    <script>
+        let lato1 = 5;
+        let lato2 = 6;
+        let lato3 = 7;
+        
+        // triangolo scaleno 
+
+        let semiPerimetro = (lato1 + lato2 + lato3) / 2;
+
+        let area = Math.sqrt(semiPerimetro * (semiPerimetro - lato1) * (semiPerimetro - lato2) * (semiPerimetro - lato3)).toPrecision(4);
+
+        let risultato = document.querySelector("#risultato");
+
+        risultato.innerHTML = `lato 1 = ${lato1} cm , lato 2 = ${lato2} cm , lato 3 = ${lato3} cm -- area = ${area} cm^2`;
+    </script>
+</body>
+</html>

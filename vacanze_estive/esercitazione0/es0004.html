@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>es0004</title>
+</head>
+<body>
+    <div id="demo"></div>
+
+    <script>
+        let demo = document.querySelector("#demo");
+        let nome = prompt("Inserisci il tuo nome:", "");
+        let messaggio;
+
+        if (nome != "") {
+            demo.removeAttribute("class", "txtRed");
+            messaggio = `Ciao ${nome}, benvenuto sul nostro sito !`;
+            demo.innerHTML = `<h1>${messaggio}</h1>`;
+        }else{
+            messaggio = "Non hai inserito il nome !";
+            demo.setAttribute("class", "txtRed");
+            demo.innerHTML = messaggio;
+        }
+    </script>
+</body>
+</html>

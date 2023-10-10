@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+}
+
+.container{
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+h1{
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    color: rgb(32,45,102);
+}
+h2{
+    font-size: 1.1rem;
+    margin: 0.8rem 0;
+    color: #222;
+}
+
+section{
+    width: 50%;
+    height: auto;
+    padding: 3.5rem;
+}
+
+#form1, #form2 {
+    max-width: 100%;
+    color: #222;
+}
+
+input{
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+}
+
+label{
+    font-weight: bold;
+}
+
+input[type = "button"] {
+    padding: 0.4rem;
+    border-radius: 0.2rem;
+    font-weight: bold;
+}
+
+input[type = "button"]:hover{
+    cursor: pointer;
+    background-color: rgb(32,45,102);
+    color: #fff;
+}
+
+#feed1, #feed2 {
+    margin: 0.7rem 0;
+    color: brown;
+    font-weight: bold;
+}

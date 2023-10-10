@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista To do:</h1>
+
+    <div>
+        <input type="text" placeholder="todo" id="itemTodo">
+    </div>
+    <button id="btn">Add</button>
+
+    <hr>
+
+    <ul id="listaTodos"></ul>
+
+
+    <script>
+
+        // recupero la lista e il button Add
+        let listaTodos = document.querySelector("#listaTodos");
+
+        let btn = document.querySelector("#btn");
+
+
+
+        function aggiungi(){
+
+            // recupero il valore del campo input
+            let itemTodo = document.querySelector("#itemTodo").value;
+
+            // metodo vecchio
+            // non si possono usare i metodi degli oggetti
+            //listaTodos.innerHTML += `<li>${itemTodo}</li>`;
+
+            let li = document.createElement("li");
+            
+            // inserisco nel nuovo li il valore del campo input
+            li.textContent = itemTodo;
+
+            // aggancio il nuovo li alla ul
+            listaTodos.appendChild(li);
+
+            
+
+
+            // funzione che mette il testo barrato al click sul singolo li
+            
+            li.addEventListener("click", function(){  // funzione anonima
+                
+                // this si riferisce ad li
+                
+                if (this.classList.contains("barrato")) {
+                    this.classList.remove("barrato");
+                }else{
+                    this.classList.add("barrato");
+                }
+            });
+
+
+
+            // creo un nuovo button per eliminare un li
+            let btnElim = document.createElement("button");
+
+            btnElim.textContent = " X ";
+
+            li.appendChild(btnElim);  // btnElim fa parte di li
+
+
+
+
+            // funzione che rimuove un li al click del btnElim
+
+            btnElim.addEventListener("click", function(){ // funzione anonima
+                listaTodos.removeChild(li);
+
+                // li si riferisce quello contenente quel btnElim da noi cliccato
+            })
+
+            document.querySelector("#itemTodo").value = "";
+        }
+
+        btn.addEventListener("click", aggiungi);
+
+
+
+    </script>
+
+</body>
+</html>

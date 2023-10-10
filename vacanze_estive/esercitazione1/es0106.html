@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>es0106</title>
+</head>
+<body>
+    <div id="container">
+
+        <label for="stringa"><strong>Inserisci una stringa:</strong></label>
+
+        <div>
+            <input type="text" name="stringa" id="stringa" placeholder="stringa">
+        </div>
+
+        <label for="position"><strong>Posizione del carattere:</strong></label>
+
+        <div class="divPosition">
+            <input type="number" name="position" id="position" min="0">
+        </div>
+
+        <button id="btnRimuovi">Rimuovi carattere</button>
+
+        <div id="newStringa"></div>
+
+    </div>
+
+
+
+    <script>
+        let stringa = document.querySelector("#stringa");
+        let position = document.querySelector("#position");
+        let btnRimuovi = document.querySelector("#btnRimuovi");
+
+        let container = document.querySelector("#container");
+        let divPosition = document.querySelector(".divPosition");
+
+        let risultato = document.querySelector("#newStringa");
+
+        let indexOfChar = document.createElement("div");
+        divPosition.appendChild(indexOfChar);
+
+        let feed = document.createElement("div");
+        container.appendChild(feed);
+        feed.setAttribute("class", "txtRed");
+
+        stringa.addEventListener("focus", function(){
+            indexOfChar.setAttribute("class", "display-none");
+        });
+
+        stringa.addEventListener("blur", function(){
+            if (stringa.value != "") {
+                feed.innerHTML = "";
+            }
+        });
+
+        position.addEventListener("focus", function(){
+
+            if (stringa.value != "") {
+
+                feed.innerHTML = "";
+
+                indexOfChar.removeAttribute("class", "display-none");
+
+                indexOfChar.innerHTML = `Quale carattere desideri eliminare? 
+                \nDigita nel campo la posizione in cui si trova.`;
+    
+                for (let i = 0; i < stringa.value.length; i++) {
+                    
+                    if (stringa.value[i] == " ") {
+                        indexOfChar.innerHTML += `\n<li><strong> ${i} = (spazio) </strong></li>`;    
+                    }else{
+
+                        indexOfChar.innerHTML += `\n<li><strong> ${i} = ${stringa.value[i]} </strong></li>`;    
+                    }
+                }
+    
+                position.setAttribute("max", "stringa.value.length - 1");
+
+            }else{
+
+                feed.innerHTML = "Inserisci una stringa nel campo precedente prima di procedere con il resto !";
+            }
+        });
+
+
+
+        function deleteCharacter(){
+
+            if (stringa.value == "" || position.value == "") {
+
+                feed.innerHTML = "Occorre compilare entrambi i campi !";
+            }else{
+
+                let limitedStringa1 = stringa.value.substring(0, Number(position.value)); 
+                let limitedStringa2 = stringa.value.substr(Number(position.value) + 1);
+    
+                let newStringa = limitedStringa1 + limitedStringa2;
+    
+                risultato.innerHTML += `<li>${newStringa}</li>`;
+    
+                stringa.value = "";
+                position.value = "";
+                indexOfChar.innerHTML = "";
+                feed.innerHTML = "";
+            }
+            
+        }
+
+        btnRimuovi.addEventListener("click", deleteCharacter);
+    </script>
+</body>
+</html>

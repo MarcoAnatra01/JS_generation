@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>classList</title>
+</head>
+<body>
+    <h2>Lista film</h2>
+
+    <ul id="listaFilm">
+        <li class="txtBlue" >Harry Potter</li>
+        <li class="txtBlue">Gli spiriti dell'isola</li>
+        <li class="txtBlue">La sottile linea rossa</li>
+    </ul>
+
+
+
+    <script>
+        // classList è una lista di classi associata ad un determinato elemento
+        // simile ad un array come le nodelist
+
+
+        // esercizio: aggiungere una classe a quella esistente
+
+        let listaFilm = document.querySelectorAll("#listaFilm li");
+
+        [...listaFilm].forEach(film => {
+
+            film.classList.add("underLine");
+
+            // posso aggiungere anche più classi contemporaneamente
+            // film.classList.add("underLine", "txtBlue");
+        });
+
+        [...listaFilm].forEach(film => {
+
+            film.addEventListener("onfocus", film.classList.add("pointer"));
+
+            film.addEventListener("dblclick", function(){
+                if (film.classList.contains("underLine")) {
+                    film.classList.remove("underLine");
+                }else{
+                    film.classList.add("underLine");
+                }
+            })
+        });
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>es0102</title>
+</head>
+<body>
+    <!-- programma che prende e stampa l'URL della pagina -->
+
+
+    
+
+    <script>
+        let body = document.querySelector("body");
+
+        // l'oggetto window rappresenta la finestra aperta nel browser
+        // l'oggetto location è una proprietà dell'oggetto window e contiene le informazioni dell'URL corrente
+        // la proprietà href è l'URL corrente per intero
+
+        let URLcorrente = window.location.href;
+        
+        console.log(`URL della pagina corrente: ${URLcorrente}`);
+        
+        let printedURL = document.createElement("h3");
+        printedURL.classList.add("txtGreen");
+        printedURL.textContent = `URL corrente: ${URLcorrente}`;
+
+        body.appendChild(printedURL);
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es02-02</title>
+</head>
+<body>
+    <label for="Data di nascita"><strong>Data Nascita</strong></label>
+    <div>
+        <input type="date" name="nascita" id="nascita">
+    </div>
+
+    <br>
+
+    <label for="otherDate"><strong>seconda data</strong></label>
+    <div>
+        <input type="date" name="otherDate" id="otherDate">
+    </div>
+
+    <button id="btnCalcola">Calcola età</button>
+
+    <br>
+
+    <div id="demo"></div>
+
+
+
+
+    <script>
+        let nascita = document.querySelector("#nascita");
+        let otherDate = document.querySelector("#otherDate");
+        let btnCalcola = document.querySelector("#btnCalcola");
+
+        let demo = document.querySelector("#demo");
+
+        function calcolaEta(){
+            let eta = otherDate.value - nascita.value;
+            demo.innerHTML = `età: ${eta} anni`;
+        }
+        
+        btnCalcola.addEventListener("click", calcolaEta);
+        
+    </script>
+</body>
+</html>

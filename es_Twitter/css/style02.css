@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 75%;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    color: #222;
+}
+
+h1{
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #067acc;
+}
+
+h3{
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #222;
+}
+
+textarea{
+    width: 500px;
+    height: 300px;
+    padding: 0.7rem;
+    border: 2px solid black;
+    background-color: #fff;
+    margin-top: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: #222;
+}
+
+label{
+    font-size: 1.2rem;    
+}
+
+div#contatore {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+div#feed {
+    margin-top: 0.8rem;
+    color: #bd2d2c;
+}
+
+#btn{
+    font-size: 1rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+#btn:hover{
+    color: #fff;
+    background-color: #067acc;
+    cursor: pointer;
+}
+
+#stampa{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    max-width: 60%;
+    height: auto;
+}
+
+#stampa li{
+    margin-top: 1.4rem;
+}
+
+#stampa span{
+    color: #666;
+    font-size: 0.9rem;
+}
+
+
+
+

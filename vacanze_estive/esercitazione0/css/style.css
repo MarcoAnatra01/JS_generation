@@ -1,0 +1,15 @@
+.txtBlue{
+    color: blue;
+}
+
+.txtRed{
+    color: red;
+}
+
+.senzaPallini{
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.1rem;
+}

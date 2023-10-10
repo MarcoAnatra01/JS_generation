@@ -1,0 +1,11 @@
+.dimDiv {
+
+    /* dimensioni div.dimDiv contenuto nel div#elencoDoc  */
+
+    border: 1px solid blue;
+    width: 250px;
+    height: auto;
+    margin: 25px;
+    padding: 8px;
+    float: left;
+}

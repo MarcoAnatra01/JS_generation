@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>es02-00</title>
+</head>
+<body>
+    <div id="container">
+        <label for="name">Name</label>
+        <div>
+            <input type="text" name="name" id="name" placeholder="inserisci il tuo nome">
+        </div>
+        <button id="btnHello">Hello</button>
+
+        <div id="feed"></div>
+    </div>
+
+
+
+
+    <script>
+        let container = document.querySelector("#container");
+        let nome = document.querySelector("#name");
+        let btnHello = document.querySelector("#btnHello");
+        let feed = document.querySelector("#feed");
+        feed.setAttribute("class", "txtRed");
+
+        let saluto = document.createElement("h1");
+        container.appendChild(saluto);
+
+        btnHello.addEventListener("click", function(){
+            if (nome.value != "") {
+                saluto.textContent = `Hi ${nome.value}, welcome!`;
+                nome.value = "";
+                feed.innerHTML = "";
+            }else{
+                feed.innerHTML = "Compila il campo !"
+            }
+        });
+    </script>
+</body>
+</html>

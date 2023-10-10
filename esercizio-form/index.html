@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>esercizio 2 form</title>
+</head>
+<body>
+    <!-- costruire 2 form diversi -->
+
+    <!-- campi dei form: Nome, Cognome, Codice Fiscale, Età -->
+
+    <!-- CONTROLLI DA ESEGUIRE : -->
+    <!-- Nome e Cognome devono essere 2 parole separate da spazio
+    codiceFiscale deve essere un codice fiscale
+    età deve essere >= 18 -->
+
+    <!-- CSS : i 2 form devono essere affiancati + stile campi input -->
+
+
+    <div class="container">
+        
+        <!-- FORM 1 -->
+        <!-- campi recuperati come variabili globali e controllati nelle rispettive funzioni -->
+
+        <section>
+            <h1>Form 1</h1>
+
+            <div id="form1">
+
+                <div>
+                    <label for="nomeCognome">Nome e Cognome</label>
+                    <div>
+                        <input type="text" id="nomeCognome" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="codiceFiscale">Codice Fiscale</label>
+                    <div>
+                        <input type="text" id="codiceFiscale" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="eta">Età</label>
+                    <div>
+                        <input type="text" id="eta" required>
+                    </div>
+                </div>
+
+                <input type="button" id="btn1" value="Invia">
+
+                <div id="feed1"></div>  <!-- feedback -->
+
+                <div id="demo1">
+                    <h2>Di seguito saranno visualizzati gli utenti iscritti:</h2>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- FORM 2 -->
+        <!-- campi recuperati nelle funzioni con il loro value -->
+
+        <section>
+            <h1>Form 2</h1>
+
+            <div id="form2">
+                
+                <div>
+                    <label for="nomeCognome2">Nome e Cognome</label>
+                    <div>
+                        <input type="text" id="nomeCognome2" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="codiceFiscale2">Codice Fiscale</label>
+                    <div>
+                        <input type="text" id="codiceFiscale2" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="eta2">Età</label>
+                    <div>
+                        <input type="text" id="eta2" required>
+                    </div>
+                </div>
+
+                <input type="button" id="btn2" value="Invia">
+
+                <div id="feed2"></div>  <!-- feedback -->
+
+                <div id="demo2">
+                    <h2>Di seguito saranno visualizzati gli utenti iscritti:</h2>
+                </div>
+
+            </div>
+        </section>
+        
+    </div>  <!-- chiusura container -->
+    
+    <script src="./js/script.js"></script>
+    <script src="./js/script02.js"></script>
+</body>
+</html>

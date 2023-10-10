@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>es0104</title>
+</head>
+<body>
+    <!-- programma che calcola, in valore assoluto, la differenza tra uno specifico numero e 19. 
+    Ritorna il triplo del valore della differenza se il numero specificato è maggiore di 19 -->
+
+
+    <div>
+        <label for="numero">Inserisci un numero</label>
+        <input type="number" name="numero" id="numero" placeholder="0">
+    </div>
+
+    <button id="btnCalcola">Calcola differenza</button>
+
+    <div id="demo"></div>
+
+    <script>
+        let numero = document.querySelector("#numero");
+
+        let demo = document.querySelector("#demo");
+
+        let btnCalcola = document.querySelector("#btnCalcola");
+
+        function differenza(){
+            if (numero.value != "") {
+                demo.innerHTML = "";
+                demo.removeAttribute("class", "txtRed");
+
+                let sottrazione = Number(numero.value) - 19;
+                let sottrazioneAbs = Math.abs(sottrazione);
+
+                if (numero.value > 19) {
+
+                    let sottrazioneAbsX3 = sottrazioneAbs * 3;
+                    
+                    demo.innerHTML += `Il numero inserito è maggiore di 19 \n<li>differenza tra il numero inserito e 19: ${numero.value} - 19 = |${sottrazioneAbs}|  --  triplo della differenza: |${sottrazioneAbsX3}|`;
+
+                }else{
+                    demo.innerHTML += `Il numero inserito è minore/uguale a 19 \n<li>differenza tra il numero inserito e 19: ${numero.value} - 19 = |${sottrazioneAbs}|`;
+                    
+                }
+
+                numero.value = "";
+            }else{
+                demo.setAttribute("class", "txtRed");
+                demo.innerHTML = `<h3>Inserisci un numero !</h3>`;
+            }
+        }
+
+        btnCalcola.addEventListener("click", differenza);
+    </script>
+</body>
+</html>

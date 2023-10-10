@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>tag form e evento submit</title>
+</head>
+<body>
+    <h1>Compila il seguente form:</h1>
+
+    <form id="formReg" action="#./07-benvenuto.html">
+
+
+        <!-- attributo action, url per il reindirizzamento -->
+        <!-- action permette di spostarmi da una pagina all'altra e accedere a delle risorse -->
+        <!-- action='#', rimane fermo sulla stessa pagina -->
+
+        
+        <!-- attributo method, metodo HTTP -->
+        <!-- metodo GET, scrive nell'url ciò che inserisco nel form -->
+        <!-- metodo POST, non scrive nell'url e serve per DATI SENSIBILI -->
+        <!-- metodo post su liveServer non funziona, non usare post in locale -->
+
+        <label for="nome">Nome</label>
+        <div>
+            <input type="text" id="nome" name="nome" placeholder="inserisci nome">
+        </div>
+
+        <label for="eta">Eta</label>
+        <div>
+            <input type="number" id="eta" name="eta" placeholder="la tua età">
+        </div>
+
+        <div>
+            <input type="submit" value="Invia">
+            <!-- submit significa sottoscrivere il form -->
+        </div>
+
+    </form>
+
+    <div id="demo"></div>
+
+
+
+    <script src="./js/script07.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.txtBlue{
+    color: blue;
+}
+
+.txtRed{
+    color: red;
+}
+
+.txtGreen{
+    color: green;
+}
+
+.underLine{
+    text-decoration: underline;
+}
+
+.barrato{
+    text-decoration: line-through;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.imgRes{
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista libri</h1>
+
+        <ul id="listaLibri">
+            <li>Dune</li>
+            <li>Il cacciatore di aquiloni</li>
+            <li>Le mille e una notte</li>
+            <li>Il rosso e il nero</li>
+            <li>Il conte di Montecristo</li>
+        </ul>
+    </div>
+
+    <!-- trasformare la lista in una lista con colori alternati -->
+
+    <script>
+        
+        // prima soluzione:
+        
+        // let listaLibri = document.querySelectorAll("#listaLibri li");
+        
+        /*for (let i = 0; i < listaLibri.length; i++) {
+            
+            if (i % 2 == 0) {
+
+                listaLibri[i].setAttribute("class", "txtRed")
+            }else{
+
+                listaLibri[i].setAttribute("class", "txtBlue");
+            }
+        }*/
+
+
+
+        
+        // seconda soluzione:
+
+        // DOMContentLoaded, caricamento del DOM
+        // parte la funzione anonima
+        // viene creata la nodelist list con gli li
+        // ciclo con forEach la nodelist
+        // assegno agli elementi con i pari class txtRed
+        // e agli elementi con i dispari class txtBlue
+
+        document.addEventListener("DOMContentLoaded", function(){
+            let list = document.querySelectorAll("#listaLibri li");
+
+            [...list].forEach((item, i) => {
+
+                // operatore ternario, alternativa all'if
+
+                list.classList.add(i % 2 === 0 ? "txtRed" : "txtBlue");
+            });
+        });
+
+             
+
+
+
+    </script>
+
+
+</body>
+</html>

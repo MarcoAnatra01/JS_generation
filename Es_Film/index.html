@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Es Film</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Film disponibili in sala:</h1>
+
+        <ul id="listaFilm">
+            <li>Dune</li>
+            <li>Barbie</li>
+            <li>Blade Runner</li>
+            <li>Il Signore degli Anelli</li>
+        </ul>        
+    </div>
+
+    <!-- CSS: layout responsive
+    fare come se fossero delle card 
+    (2 a 2 versione desktop)
+    (1 a 1 versione mobile) -->
+
+
+    <script>
+        // SENZA TOCCARE L'HTML
+        // inserisci un link per ogni film alla pagina wiki dedicata
+        // inserisci anche una locandina per ogni li
+
+        /*
+        <li>
+            <h3>
+                <a href="wiki.org/Dune(film)">Dune</a>
+            </h3>
+            <img src="./img/dune.jpg" class="imgLoc" alt="">
+
+        </li>
+        */
+
+        
+        let listaFilm = document.querySelectorAll("#listaFilm li");
+
+        
+        for (let i = 0; i < listaFilm.length; i++) {
+            let h3 = document.createElement("h3");
+    
+            let link = document.createElement("a");
+    
+            let img = document.createElement("img");
+            
+            link.textContent = listaFilm[i].textContent;
+            listaFilm[i].textContent = "";
+
+            listaFilm[i].prepend(h3);
+
+            h3.appendChild(link);
+            
+            listaFilm[i].appendChild(img);
+
+            
+            // prendo l'elemento della nodelist e lo converto in un array 
+            // splitta ogni volta che trova uno spazio
+            let nameItem = listaFilm[i].textContent;
+            let nameItemArr = nameItem.split(" ");
+            
+
+            let nameLink = nameItemArr.join("_");
+            let pathLink = `https://it.wikipedia.org/wiki/${nameLink}_(film)`;
+            link.setAttribute("href", pathLink);
+
+
+            // metto l'iniziale maiuscola a tutti gli elementi dell'array nameItemArr, dal secondo in poi
+            for(let j = 0; j < nameItemArr.length; j++){
+
+                nameItemArr[0][0].toLowerCase();
+
+                if (j > 0) {
+                    
+                    nameItemArr[j][0].toUpperCase();
+                }
+
+                // converto l'array nameItemArr in una stringa senza spazi
+                let nameImg = nameItemArr.join(""); 
+
+                let pathImg = `./img/${nameImg}.jpg`;
+
+                img.setAttribute("src", pathImg);
+                img.setAttribute("class", "imgLoc");
+            }
+
+            listaFilm[i].setAttribute("class", "card");
+            
+        }// for principale
+        
+    </script>
+</body>
+</html>
